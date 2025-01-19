@@ -6,7 +6,7 @@ import Close from './svg/times-solid.svg';
 function Header() {
 
   return (
-     <div></div>
+     <div>header</div>
   )
 }
 
