@@ -64,7 +64,8 @@ export const DataProvider = (props) => {
     ])
 
     const value = {
-        products : [products , setProducts]
+        products : [products , setProducts],
+        cart : [cart , setCart]
     }
 
     return(
