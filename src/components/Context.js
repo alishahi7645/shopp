@@ -63,9 +63,19 @@ export const DataProvider = (props) => {
         },
     ])
 
+    const [cart , setCart] = useState([]);
+    const addCart = (id) =>{
+        const data = products.filter(product => {
+            return product._id === id
+        })
+        setCart([...cart, ...data])
+    }
+
     const value = {
         products : [products , setProducts],
-        cart : [cart , setCart]
+        cart : [cart , setCart],
+
+        addCart : addCart
     }
 
     return(
