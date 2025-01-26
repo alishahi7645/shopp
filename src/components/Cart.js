@@ -1,10 +1,10 @@
-import React,{useContext} from "react";
-import {DataContext} from './Context';
-import formatCurrency from '../util';
+import React, { useContext } from "react";
+import { DataContext } from "./Context";
+import formatCurrency from "../util";
 
 function Cart() {
-    const value = useContext(DataContext);
-    const [cart , setCart] = value.cart;
+  const value = useContext(DataContext);
+  const [cart, setCart] = value.cart;
 
   return (
     <>
@@ -25,6 +25,12 @@ function Cart() {
             </div>
             <p>{product.description}</p>
             <p>{product.content}</p>
+            
+            <div className="amount">
+              <button>-</button>
+              <span>{product.count}</span>
+              <button>+</button>
+            </div>
           </div>
         </div>
       ))}

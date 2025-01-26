@@ -67,13 +67,17 @@ export const DataProvider = (props) => {
     const addCart = (id) =>{
 
         const check = cart.every(item => {
-            
+            return item._id !== id
         })
 
-        const data = products.filter(product => {
-            return product._id === id
-        })
-        setCart([...cart, ...data])
+        if(check){
+            const data = products.filter(product => {
+                return product._id === id
+            })
+            setCart([...cart, ...data])
+        }else{
+            alert('این محصول در سبد خرید موجود هست')
+        }
     }
 
     const value = {
