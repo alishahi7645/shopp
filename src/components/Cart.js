@@ -5,6 +5,8 @@ import formatCurrency from "../util";
 function Cart() {
   const value = useContext(DataContext);
   const [cart, setCart] = value.cart;
+  const increase = value.increase;
+  const decrease = value.decrease
 
   return (
     <>
@@ -27,9 +29,9 @@ function Cart() {
             <p>{product.content}</p>
             
             <div className="amount">
-              <button>-</button>
+              <button className="count" onClick={() => increase(product._id)}>+</button>
               <span>{product.count}</span>
-              <button>+</button>
+              <button className="count" onClick={() => decrease(product._id)}>-</button>
             </div>
           </div>
         </div>
